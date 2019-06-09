@@ -9,7 +9,7 @@
     <sprite>sprites\TankBody</sprite>
     <sprite>sprites\TankCannon</sprite>
     <sprite>sprites\Wall</sprite>
-    <sprite>sprites\sprite3</sprite>
+    <sprite>sprites\Bullet</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
