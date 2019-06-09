@@ -28,7 +28,7 @@
             <string>globalvar playdir;
 playdir = 90;
 depth = 0
-
+tankHealth = 100;
 direction = playdir
 
 playspeed = 4
