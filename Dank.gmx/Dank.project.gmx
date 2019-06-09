@@ -9,6 +9,7 @@
     <sprite>sprites\TankBody</sprite>
     <sprite>sprites\TankCannon</sprite>
     <sprite>sprites\Wall</sprite>
+    <sprite>sprites\sprite3</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -16,6 +17,7 @@
     <object>objects\ObjTankBody</object>
     <object>objects\ObjTankCannon</object>
     <object>objects\ObjWall</object>
+    <object>objects\ObjBullet</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
