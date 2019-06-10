@@ -15,6 +15,7 @@
       <sprite>sprites\greenHealth</sprite>
       <sprite>sprites\redHealth</sprite>
     </sprites>
+    <sprite>sprites\enemy1</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -24,6 +25,7 @@
     <object>objects\ObjWall</object>
     <object>objects\ObjBullet</object>
     <object>objects\ctrlRoom</object>
+    <object>objects\ObjEnemy</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
