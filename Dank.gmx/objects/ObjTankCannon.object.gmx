@@ -55,7 +55,7 @@ x = ObjTankBody.x;
 y = ObjTankBody.y;
 
 if mouse_check_button_pressed(mb_left){
-  instance_create(x - lengthdir_x(45, image_angle), y - lengthdir_y(45, image_angle),ObjBullet)
+  var bullet = instance_create(x - lengthdir_x(45, image_angle), y - lengthdir_y(45, image_angle),ObjBullet);
 }
 </string>
           </argument>

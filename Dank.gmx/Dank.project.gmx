@@ -9,15 +9,31 @@
     <sprite>sprites\TankBody</sprite>
     <sprite>sprites\TankCannon</sprite>
     <sprite>sprites\Wall</sprite>
-    <sprite>sprites\sprite3</sprite>
+    <sprites name="health">
+      <sprite>sprites\emptyHealth</sprite>
+      <sprite>sprites\greenHealth</sprite>
+      <sprite>sprites\redHealth</sprite>
+    </sprites>
+    <sprite>sprites\enemy1</sprite>
+    <sprite>sprites\sprite8</sprite>
+    <sprites name="Guns">
+      <sprite>sprites\Bullet</sprite>
+      <sprite>sprites\Mine</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <fonts name="fonts">
+    <font>fonts\damageFont</font>
+  </fonts>
   <objects name="objects">
     <object>objects\ObjTankBody</object>
     <object>objects\ObjTankCannon</object>
     <object>objects\ObjWall</object>
     <object>objects\ObjBullet</object>
+    <object>objects\ctrlRoom</object>
+    <object>objects\ObjEnemy</object>
+    <object>objects\hitLabel</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
