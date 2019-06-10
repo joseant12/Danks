@@ -8,6 +8,61 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>global.bulletDamage = 10;
+
+//Create grid
+var cell_width = 32;
+var cell_height = 32;
+var hcells = room_width div cell_width;
+var vcells = room_height div cell_height;
+global.grid = mp_grid_create(0, 0, hcells, vcells, cell_width, cell_height);
+
+mp_grid_add_instances(global.grid, ObjWall, false);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>mp_grid_destroy(global.grid);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -28,6 +83,7 @@
             <string>draw_sprite(redHealth, 1, view_xview[0] + 15, view_yview[0] + 10);
 draw_sprite_ext(greenHealth, 1, view_xview[0] + 15, view_yview[0] + 10, ObjTankBody.tankHealth/100, 1, 0, c_white, 1);
 draw_sprite(emptyHealth, 1, view_xview[0] + 15, view_yview[0] + 10);
+draw_line(ObjTankBody.x, ObjTankBody.y, mouse_x, mouse_y);
 </string>
           </argument>
         </arguments>
