@@ -52,12 +52,15 @@ pathActive = false;
             <kind>1</kind>
             <string>if(!collision_line(x,y,ObjTankBody.x,ObjTankBody.y,ObjWall,true,false)){
   pointDir = point_direction(x,y,ObjTankBody.x,ObjTankBody.y) + 270;
-  image_angle += sin(degtorad(pointDir - image_angle)) * 3
-  instance_create(x, y-15,ObjBullet)
+  image_angle += sin(degtorad(pointDir - image_angle)) * 1.5;
+  //direction = image_angle;
+  //var bullet = instance_create(x, y-25,ObjBullet);
+  //bullet.image_angle = image_angle + 90;
+  //bullet.direction = image_angle + 90;
 }
 
 if (mp_grid_path(global.grid, path, x, y, ObjTankBody.x, ObjTankBody.y, 1)){
-    path_start(path, 8, path_action_stop, false);
+    path_start(path, 1, path_action_stop, false);
     pathActive = true;
     image_angle = direction + 270
 }

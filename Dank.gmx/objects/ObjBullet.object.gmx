@@ -25,10 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_angle = 180 + ObjTankCannon.image_angle;
-direction = image_angle;
+            <string>//image_angle = 180 + ObjTankCannon.image_angle;
+//direction = image_angle;
 motion_set(image_angle,5)
-show_debug_message(image_angle)
 bouncingNumber = 3
 </string>
           </argument>
