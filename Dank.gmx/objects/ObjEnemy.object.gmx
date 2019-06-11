@@ -54,16 +54,18 @@ pathActive = false;
   pointDir = point_direction(x,y,ObjTankBody.x,ObjTankBody.y) + 270;
   image_angle += sin(degtorad(pointDir - image_angle)) * 1.5;
   //direction = image_angle;
-  //var bullet = instance_create(x, y-25,ObjBullet);
-  //bullet.image_angle = image_angle + 90;
-  //bullet.direction = image_angle + 90;
+  var bullet = instance_create(x - lengthdir_x(33, direction + 180), y - lengthdir_y(33, direction + 180),ObjBullet);
+  bullet.image_angle = image_angle + 90;
+  bullet.direction = image_angle + 90;
 }
 
 if (mp_grid_path(global.grid, path, x, y, ObjTankBody.x, ObjTankBody.y, 1)){
-    path_start(path, 1, path_action_stop, false);
+    path_start(path, 0.1, path_action_stop, false);
     pathActive = true;
     image_angle = direction + 270
 }
+draw_rectangle(bbox_left,bbox_top,bbox_right,bbox_bottom,1)
+//instance_create(x - lengthdir_x(45, image_angle), y - lengthdir_y(45, image_angle),ObjBullet);
 </string>
           </argument>
         </arguments>
@@ -86,7 +88,7 @@ if (mp_grid_path(global.grid, path, x, y, ObjTankBody.x, ObjTankBody.y, 1)){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>tankHealth = tankHealth - global.bulletDamage
+            <string>//tankHealth = tankHealth - global.bulletDamage
 if (not tankHealth) instance_destroy();
 </string>
           </argument>
