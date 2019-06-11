@@ -75,6 +75,7 @@ if(key_up) and (place_free(x + playspeed * cos(direction * pi / 180), y - playsp
  x = x - playspeed * cos( direction * pi/180)
  y = y + playspeed * sin( direction * pi/180)
 }
+tankWater += 0.05;
 </string>
           </argument>
         </arguments>

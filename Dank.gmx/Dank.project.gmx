@@ -23,7 +23,9 @@
     <sprites name="water">
       <sprite>sprites\emptyWater</sprite>
       <sprite>sprites\waterLvl</sprite>
+      <sprite>sprites\Bucket</sprite>
     </sprites>
+    <sprite>sprites\flameTurret</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -38,6 +40,9 @@
     <object>objects\ctrlRoom</object>
     <object>objects\ObjEnemy</object>
     <object>objects\hitLabel</object>
+    <object>objects\ObjBucket</object>
+    <object>objects\ObjFlame</object>
+    <object>objects\superEnemy</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
