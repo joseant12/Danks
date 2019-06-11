@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>//image_angle = 180 + ObjTankCannon.image_angle;
 //direction = image_angle;
-motion_set(image_angle,5)
-bouncingNumber = 3
+motion_set(image_angle,7)
+bouncingNumber = 2
 </string>
           </argument>
         </arguments>
@@ -111,7 +111,12 @@ if (bouncingNumber) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>ObjTankBody.tankHealth = ObjTankBody.tankHealth - global.bulletDamage;
+            <string>playerHealth = ObjTankBody.tankHealth - global.bulletDamage;
+if (playerHealth &lt;= 0){
+    ObjTankBody.tankHealth = 0;
+} else {
+    ObjTankBody.tankHealth = playerHealth;
+}
 var damageInstance = instance_create(x+5, y, hitLabel);
 damageInstance.damage = global.bulletDamage
 instance_destroy();

@@ -29,6 +29,7 @@
 playdir = 90;
 depth = 0
 tankHealth = 100;
+tankWater = 100;
 direction = playdir
 
 playspeed = 4
@@ -55,7 +56,8 @@ play_turn = 3
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>key_left = keyboard_check_direct(ord("A"));
+            <string>//if (tankHealth &lt;= 0) instance_destroy();
+key_left = keyboard_check_direct(ord("A"));
 key_right = keyboard_check_direct(ord("D"));
 key_up = keyboard_check_direct(ord("W"));
 key_down = keyboard_check_direct(ord("S"));

@@ -20,6 +20,10 @@
       <sprite>sprites\Bullet</sprite>
       <sprite>sprites\Mine</sprite>
     </sprites>
+    <sprites name="water">
+      <sprite>sprites\emptyWater</sprite>
+      <sprite>sprites\waterLvl</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>

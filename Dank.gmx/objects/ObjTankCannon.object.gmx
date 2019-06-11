@@ -54,10 +54,11 @@ image_angle -= sin(degtorad(point_dir - image_angle)) * 7
 x = ObjTankBody.x;
 y = ObjTankBody.y;
 
-if mouse_check_button_pressed(mb_left){
+if (mouse_check_button_pressed(mb_left) and ObjTankBody.tankWater &gt; 0){
   var bullet = instance_create(x - lengthdir_x(45, image_angle), y - lengthdir_y(45, image_angle),ObjBullet);
   bullet.image_angle = 180 + image_angle;
   bullet.direction = 180 + image_angle;
+  ObjTankBody.tankWater -= 5;
 }
 </string>
           </argument>

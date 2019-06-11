@@ -28,6 +28,32 @@
             <string>tankHealth = 100;
 path = path_add();
 pathActive = false;
+depth = -15
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>var bullet = instance_create(x - lengthdir_x(33, direction + 180), y - lengthdir_y(33, direction + 180),ObjBullet);
+bullet.image_angle = image_angle + 90;
+bullet.direction = image_angle + 90;
 </string>
           </argument>
         </arguments>
@@ -54,13 +80,13 @@ pathActive = false;
   pointDir = point_direction(x,y,ObjTankBody.x,ObjTankBody.y) + 270;
   image_angle += sin(degtorad(pointDir - image_angle)) * 1.5;
   //direction = image_angle;
-  var bullet = instance_create(x - lengthdir_x(33, direction + 180), y - lengthdir_y(33, direction + 180),ObjBullet);
-  bullet.image_angle = image_angle + 90;
-  bullet.direction = image_angle + 90;
+  if (alarm[0] = -1) alarm[0] = 20
 }
 
-if (mp_grid_path(global.grid, path, x, y, ObjTankBody.x, ObjTankBody.y, 1)){
-    path_start(path, 0.1, path_action_stop, false);
+if (distance_to_object(ObjTankBody) &lt; 10 ){
+    path_end();
+} else if (mp_grid_path(global.grid, path, x, y, ObjTankBody.x, ObjTankBody.y, 1)){
+    path_start(path, 1.2, path_action_stop, false);
     pathActive = true;
     image_angle = direction + 270
 }
@@ -88,7 +114,7 @@ draw_rectangle(bbox_left,bbox_top,bbox_right,bbox_bottom,1)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//tankHealth = tankHealth - global.bulletDamage
+            <string>tankHealth = tankHealth - global.bulletDamage
 if (not tankHealth) instance_destroy();
 </string>
           </argument>
