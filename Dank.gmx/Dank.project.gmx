@@ -19,6 +19,7 @@
     <sprites name="Guns">
       <sprite>sprites\Bullet</sprite>
       <sprite>sprites\Mine</sprite>
+      <sprite>sprites\cannon</sprite>
     </sprites>
     <sprites name="water">
       <sprite>sprites\emptyWater</sprite>
@@ -43,6 +44,7 @@
     <object>objects\ObjBucket</object>
     <object>objects\ObjFlame</object>
     <object>objects\superEnemy</object>
+    <object>objects\ObjCannon</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

@@ -82,7 +82,6 @@ instance_destroy();
     image_angle = - image_angle
 }
 direction = image_angle
-show_debug_message(image_angle)
 if (bouncingNumber) {
     bouncingNumber = bouncingNumber - 1
 } else {
