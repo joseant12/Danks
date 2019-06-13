@@ -34,6 +34,37 @@ bouncingNumber = 2
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="ObjCannon">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//show_debug_message(other.x - lengthdir_x(10, other.image_angle + 90))
+//show_debug_message(other.y - lengthdir_y(10, other.image_angle + 90))
+show_debug_message(distance_to_point(other.x - lengthdir_x(7, other.image_angle + 90), other.y - lengthdir_y(7, other.image_angle + 90)))
+if (distance_to_point(other.x - lengthdir_x(10, other.image_angle + 90), other.y - lengthdir_y(10, other.image_angle + 90)) &lt; 17) {
+    show_debug_message(other.x - lengthdir_x(10, other.image_angle + 90))
+    show_debug_message(other.y - lengthdir_y(10, other.image_angle + 90))
+} else {
+    instance_destroy();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="ObjEnemy">
       <action>
         <libid>1</libid>
