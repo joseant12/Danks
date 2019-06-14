@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>image_speed = 0.5
+tankHealth = 50
 </string>
           </argument>
         </arguments>
@@ -73,16 +74,18 @@ bullet.direction = 90 + image_angle;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*
-if(!collision_line(x,y,ObjTankBody.x,ObjTankBody.y,ObjWall,true,false)){
+            <string>if(!collision_line(x,y,ObjTankBody.x,ObjTankBody.y,ObjWall,true,false)){
   pointDir = point_direction(x,y,ObjTankBody.x,ObjTankBody.y) + 270;
   image_angle += sin(degtorad(pointDir - image_angle)) * 3;
   if (alarm[0] = -1) alarm[0] = 20
 } else {
   image_angle += 1;
 }
-*/
-image_angle += 1;
+
+if tankHealth &lt;= 0{
+    instance_destroy()
+}
+//image_angle += 1;
 direction = image_angle;
 
 
@@ -91,7 +94,7 @@ direction = image_angle;
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="ObjBullet">
+    <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -108,7 +111,8 @@ direction = image_angle;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//show_debug_message(y - lengthdir_y(10, image_angle + 90));
+            <string>draw_self()
+draw_healthbar(x-16,y-37, x+16, y-30, (tankHealth/50)*100, c_black, c_red, c_green, 0, true, false)
 </string>
           </argument>
         </arguments>

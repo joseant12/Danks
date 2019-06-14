@@ -28,6 +28,7 @@
             <string>image_speed = 0
 motion_set(image_angle,7)
 bouncingNumber = 2
+collision = false;
 </string>
           </argument>
         </arguments>
@@ -74,14 +75,14 @@ image_speed = 1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>show_debug_message(distance_to_point(other.x - lengthdir_x(7, other.image_angle + 90), other.y - lengthdir_y(7, other.image_angle + 90)))
-if (distance_to_point(other.x - lengthdir_x(10, other.image_angle + 90), other.y - lengthdir_y(10, other.image_angle + 90)) &lt; 17) {
-    show_debug_message(other.x - lengthdir_x(10, other.image_angle + 90))
-    show_debug_message(other.y - lengthdir_y(10, other.image_angle + 90))
-} else {
-    //instance_destroy();
-    image_speed = 1
+            <string>//show_debug_message(distance_to_point(other.x - lengthdir_x(10, other.image_angle + 90), other.y - lengthdir_y(10, other.image_angle + 90)))
+if (!collision and distance_to_point(other.x - lengthdir_x(10, other.image_angle + 90), other.y - lengthdir_y(10, other.image_angle + 90)) &lt; 19) {
+    other.tankHealth -= 10
+    collision = true;
+    var damageInstance = instance_create(x+5, y, hitLabel);
+    damageInstance.damage = 10;
 }
+image_speed = 1;
 </string>
           </argument>
         </arguments>
@@ -105,7 +106,7 @@ if (distance_to_point(other.x - lengthdir_x(10, other.image_angle + 90), other.y
           <argument>
             <kind>1</kind>
             <string>var damageInstance = instance_create(x+5, y, hitLabel);
-damageInstance.damage = global.bulletDamage;
+damageInstance.damage = 10;
 if (image_index == 0){
     other.tankHealth -= 10
 }
