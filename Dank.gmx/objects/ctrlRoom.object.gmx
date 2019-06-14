@@ -80,9 +80,11 @@ mp_grid_add_instances(global.grid, ObjWall, false);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite(redHealth, 1, view_xview[0] + 15, view_yview[0] + 10);
-draw_sprite_ext(greenHealth, 1, view_xview[0] + 15, view_yview[0] + 10, ObjTankBody.tankHealth/100, 1, 0, c_white, 1);
-draw_sprite(emptyHealth, 1, view_xview[0] + 15, view_yview[0] + 10);
+            <string>draw_sprite(redHealth, 1, view_xview[0] + 35, view_yview[0] + 15);
+draw_sprite_ext(greenHealth, 1, view_xview[0] + 35, view_yview[0] + 15, ObjTankBody.tankHealth/100, 1, 0, c_white, 1);
+draw_sprite(emptyHealth, 1, view_xview[0] + 8, view_yview[0] + 5);
+draw_sprite_ext(waterLvl, 1, view_xview[0] + 435, view_yview[0] + 15, ObjTankBody.tankWater/100, 1, 0, c_white, 1);
+draw_sprite(emptyWater, 1, view_xview[0] + 408, view_yview[0] + 5);
 draw_line(ObjTankBody.x, ObjTankBody.y, mouse_x, mouse_y);
 </string>
           </argument>

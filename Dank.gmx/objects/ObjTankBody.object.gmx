@@ -25,10 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>globalvar playdir;
-playdir = 90;
+            <string>image_speed = 0;
+shield = false;
+globalvar playdir;
+playdir = 180;
 depth = 0
 tankHealth = 100;
+tankWater = 100;
 direction = playdir
 
 playspeed = 4
@@ -55,11 +58,14 @@ play_turn = 3
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>key_left = keyboard_check_direct(ord("A"));
+            <string>//if (tankHealth &lt;= 0) instance_destroy();
+key_left = keyboard_check_direct(ord("A"));
 key_right = keyboard_check_direct(ord("D"));
 key_up = keyboard_check_direct(ord("W"));
 key_down = keyboard_check_direct(ord("S"));
-
+if shield and tankWater &gt; 1 {
+  tankWater -= 0.75
+} else {
 if(key_up) and (place_free(x + playspeed * cos(direction * pi / 180), y - playspeed * sin( direction * pi/180))){
  x = x + playspeed * cos( direction * pi/180)
  y = y - playspeed * sin( direction * pi/180)
@@ -72,6 +78,61 @@ if(key_up) and (place_free(x + playspeed * cos(direction * pi / 180), y - playsp
 } if(key_down) and (place_free(x - playspeed * cos( direction * pi/180), y + playspeed * sin( direction * pi/180))) {
  x = x - playspeed * cos( direction * pi/180)
  y = y + playspeed * sin( direction * pi/180)
+}}
+if (tankWater &lt; 99.95) tankWater += 0.05;
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="57">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>shield = false;
+image_index = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="54">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if tankWater &gt;= 1{
+    shield = true;
+    image_index = 1
+} else {
+ shield = false;
+ image_index = 0
 }
 </string>
           </argument>

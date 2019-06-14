@@ -27,8 +27,62 @@
             <kind>1</kind>
             <string>//image_angle = 180 + ObjTankCannon.image_angle;
 //direction = image_angle;
-motion_set(image_angle,5)
-bouncingNumber = 3
+motion_set(image_angle,7)
+bouncingNumber = 2
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="ObjBox">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>instance_destroy()
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="ObjCannon">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//show_debug_message(other.x - lengthdir_x(10, other.image_angle + 90))
+//show_debug_message(other.y - lengthdir_y(10, other.image_angle + 90))
+show_debug_message(distance_to_point(other.x - lengthdir_x(7, other.image_angle + 90), other.y - lengthdir_y(7, other.image_angle + 90)))
+if (distance_to_point(other.x - lengthdir_x(10, other.image_angle + 90), other.y - lengthdir_y(10, other.image_angle + 90)) &lt; 17) {
+    show_debug_message(other.x - lengthdir_x(10, other.image_angle + 90))
+    show_debug_message(other.y - lengthdir_y(10, other.image_angle + 90))
+} else {
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>
@@ -51,9 +105,10 @@ bouncingNumber = 3
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var damageInstance = instance_create(x+5, y, hitLabel);
-damageInstance.damage = global.bulletDamage;
+            <string>//var damageInstance = instance_create(x+5, y, hitLabel);
+//damageInstance.damage = global.bulletDamage;
 instance_destroy();
+//image_speed = 1
 </string>
           </argument>
         </arguments>
@@ -82,7 +137,6 @@ instance_destroy();
     image_angle = - image_angle
 }
 direction = image_angle
-show_debug_message(image_angle)
 if (bouncingNumber) {
     bouncingNumber = bouncingNumber - 1
 } else {
@@ -111,9 +165,17 @@ if (bouncingNumber) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>ObjTankBody.tankHealth = ObjTankBody.tankHealth - global.bulletDamage;
-var damageInstance = instance_create(x+5, y, hitLabel);
-damageInstance.damage = global.bulletDamage
+            <string>playerHealth = ObjTankBody.tankHealth - global.bulletDamage;
+if not other.shield{
+    if (playerHealth &lt;= 0){
+        ObjTankBody.tankHealth = 0;
+    } else {
+        ObjTankBody.tankHealth = playerHealth;
+    }
+    var damageInstance = instance_create(x+5, y, hitLabel);
+    damageInstance.damage = global.bulletDamage
+}
+
 instance_destroy();
 </string>
           </argument>

@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>superEnemy</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,9 +25,35 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>tankHealth = 100;
+            <string>tankHealth = 50;
 path = path_add();
 pathActive = false;
+depth = -15
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>var bullet = instance_create(x - lengthdir_x(33, direction + 180), y - lengthdir_y(33, direction + 180),ObjBullet);
+bullet.image_angle = image_angle + 90;
+bullet.direction = image_angle + 90;
 </string>
           </argument>
         </arguments>
@@ -54,40 +80,19 @@ pathActive = false;
   pointDir = point_direction(x,y,ObjTankBody.x,ObjTankBody.y) + 270;
   image_angle += sin(degtorad(pointDir - image_angle)) * 1.5;
   //direction = image_angle;
-  //var bullet = instance_create(x, y-25,ObjBullet);
-  //bullet.image_angle = image_angle + 90;
-  //bullet.direction = image_angle + 90;
+  if (alarm[0] = -1) alarm[0] = 20
 }
 
-if (mp_grid_path(global.grid, path, x, y, ObjTankBody.x, ObjTankBody.y, 1)){
-    path_start(path, 1, path_action_stop, false);
+if (distance_to_object(ObjTankBody) &lt; 10 ){
+    path_end();
+} else if (mp_grid_path(global.grid, path, x, y, ObjTankBody.x, ObjTankBody.y, 1)){
+    path_start(path, 1.2, path_action_stop, false);
     pathActive = true;
     image_angle = direction + 270
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="ObjBullet">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>tankHealth = tankHealth - global.bulletDamage
 if (not tankHealth) instance_destroy();
+draw_rectangle(bbox_left,bbox_top,bbox_right,bbox_bottom,1)
+//instance_create(x - lengthdir_x(45, image_angle), y - lengthdir_y(45, image_angle),ObjBullet);
 </string>
           </argument>
         </arguments>
@@ -111,7 +116,7 @@ if (not tankHealth) instance_destroy();
           <argument>
             <kind>1</kind>
             <string>draw_self()
-draw_healthbar(x-16,y-37, x+16, y-30, tankHealth, c_black, c_red, c_green, 0, true, false)
+draw_healthbar(x-16,y-37, x+16, y-30, (tankHealth/50)*100, c_black, c_red, c_green, 0, true, false)
 </string>
           </argument>
         </arguments>
