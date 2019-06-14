@@ -169,11 +169,12 @@ if (bouncingNumber) {
           <argument>
             <kind>1</kind>
             <string>playerHealth = ObjTankBody.tankHealth - global.bulletDamage;
-if (playerHealth &lt;= 0){
-    ObjTankBody.tankHealth = 0;
-} else {
-    ObjTankBody.tankHealth = playerHealth;
-}
+if not other.shield {
+    if (playerHealth &lt;= 0){
+        ObjTankBody.tankHealth = 0;
+    } else {
+        ObjTankBody.tankHealth = playerHealth;
+}}
 var damageInstance = instance_create(x+5, y, hitLabel);
 damageInstance.damage = global.bulletDamage
 //instance_destroy();
