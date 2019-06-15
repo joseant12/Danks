@@ -66,6 +66,7 @@ key_down = keyboard_check_direct(ord("S"));
 if shield and tankWater &gt; 1 {
   tankWater -= 0.5
 } else {
+image_index = 0
 if(key_up) and (place_free(x + playspeed * cos(direction * pi / 180), y - playspeed * sin( direction * pi/180))){
  x = x + playspeed * cos( direction * pi/180)
  y = y - playspeed * sin( direction * pi/180)
@@ -105,6 +106,7 @@ if (tankWater &lt; 99.95) tankWater += 0.05;
             <kind>1</kind>
             <string>shield = false;
 image_index = 0;
+audio_stop_sound(bubbling)
 </string>
           </argument>
         </arguments>
@@ -130,6 +132,7 @@ image_index = 0;
             <string>if tankWater &gt;= 1{
     shield = true;
     image_index = 1
+    audio_play_sound(bubbling,0,0)
 } else {
  shield = false;
  image_index = 0
