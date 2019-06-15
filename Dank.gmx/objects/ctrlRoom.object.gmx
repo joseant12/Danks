@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>global.bulletDamage = 10;
-
+global.buckets = 0;
 //Create grid
 var cell_width = 32;
 var cell_height = 32;

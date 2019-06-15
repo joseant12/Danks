@@ -28,13 +28,18 @@
       <sprite>sprites\Bucket</sprite>
     </sprites>
     <sprite>sprites\flameTurret</sprite>
-    <sprite>sprites\sprite15</sprite>
     <sprite>sprites\sprite16</sprite>
     <sprites name="walls">
       <sprite>sprites\Box</sprite>
       <sprite>sprites\wallfront</sprite>
       <sprite>sprites\wall2</sprite>
       <sprite>sprites\black</sprite>
+    </sprites>
+    <sprites name="instructions">
+      <sprite>sprites\avanzar</sprite>
+      <sprite>sprites\invisible</sprite>
+      <sprite>sprites\atacar</sprite>
+      <sprite>sprites\objetivos</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -63,6 +68,13 @@
       <object>objects\ObjBlack</object>
     </objects>
     <object>objects\ObjWaterBullet</object>
+    <objects name="instructions">
+      <object>objects\ObjAvanzar</object>
+      <object>objects\ObjAtacar</object>
+      <object>objects\ObjInstAtacar</object>
+      <object>objects\ObjInstObjetivos</object>
+      <object>objects\ObjObjetivos</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\room1</room>
