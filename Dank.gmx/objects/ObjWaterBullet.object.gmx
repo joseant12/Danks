@@ -169,7 +169,7 @@ if (bouncingNumber) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>playerHealth = ObjTankBody.tankHealth - global.bulletDamage;
+            <string>playerHealth = ObjTankBody.tankHealth - 1;
 if not other.shield {
     if (playerHealth &lt;= 0){
         ObjTankBody.tankHealth = 0;

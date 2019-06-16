@@ -55,14 +55,14 @@ image_angle -= sin(degtorad(point_dir - image_angle)) * 7
 x = ObjTankBody.x;
 y = ObjTankBody.y;
 
-if (mouse_check_button_pressed(mb_left) and ObjTankBody.tankWater &gt;= 3){
+if (mouse_check_button_pressed(mb_left) and ObjTankBody.tankWater &gt;= 7){
   // 
   // sound_volume(balloon,0.1)
   audio_play_sound(balloon,0,0);
   var bullet = instance_create(x - lengthdir_x(45, image_angle), y - lengthdir_y(45, image_angle),ObjWaterBullet);
   bullet.image_angle = 180 + image_angle;
   bullet.direction = 180 + image_angle;
-  ObjTankBody.tankWater -= 3;
+  ObjTankBody.tankWater -= 7;
 }
 </string>
           </argument>

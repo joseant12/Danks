@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>image_speed = 0.5
 tankHealth = 50
+audio_sound_gain(cannonSound,0.2,1000)
 </string>
           </argument>
         </arguments>
@@ -52,6 +53,7 @@ tankHealth = 50
             <string>var bullet = instance_create(x - lengthdir_x(45, image_angle + 270), y - lengthdir_y(45, image_angle + 270),ObjBullet);
 bullet.image_angle = 90 + image_angle;
 bullet.direction = 90 + image_angle;
+audio_play_sound(cannonSound,2,0);
 </string>
           </argument>
         </arguments>
@@ -77,7 +79,7 @@ bullet.direction = 90 + image_angle;
             <string>if(!collision_line(x,y,ObjTankBody.x,ObjTankBody.y,ObjWall,true,false)){
   pointDir = point_direction(x,y,ObjTankBody.x,ObjTankBody.y) + 270;
   image_angle += sin(degtorad(pointDir - image_angle)) * 3;
-  if (alarm[0] = -1) alarm[0] = 20
+  if (alarm[0] = -1) alarm[0] = 40
 } else {
   image_angle += 1;
 }

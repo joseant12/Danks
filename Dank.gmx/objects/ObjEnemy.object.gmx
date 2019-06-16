@@ -29,6 +29,7 @@
 path = path_add();
 pathActive = false;
 depth = -15
+//direction = image_angle
 </string>
           </argument>
         </arguments>

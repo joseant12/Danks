@@ -65,6 +65,7 @@ key_up = keyboard_check_direct(ord("W"));
 key_down = keyboard_check_direct(ord("S"));
 if shield and tankWater &gt; 1 {
   tankWater -= 0.5
+  tankHealth += 0.05
 } else {
 image_index = 0
 if(key_up) and (place_free(x + playspeed * cos(direction * pi / 180), y - playspeed * sin( direction * pi/180))){
@@ -80,7 +81,7 @@ if(key_up) and (place_free(x + playspeed * cos(direction * pi / 180), y - playsp
  x = x - playspeed * cos( direction * pi/180)
  y = y + playspeed * sin( direction * pi/180)
 }}
-if (tankWater &lt; 99.95) tankWater += 0.05;
+if (tankWater &lt; 99.9) tankWater += 0.1;
 
 </string>
           </argument>
@@ -133,6 +134,7 @@ audio_stop_sound(bubbling)
     shield = true;
     image_index = 1
     audio_play_sound(bubbling,0,0)
+    tankHealth += 0.01
 } else {
  shield = false;
  image_index = 0

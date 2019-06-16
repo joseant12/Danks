@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>flameActive = false;
+audio_sound_gain(flame,0.01,1000)
 </string>
           </argument>
         </arguments>
@@ -48,8 +49,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed = 0.5
+            <string>image_speed = 0.3
 flameActive = true;
+audio_play_sound(flame,2,0)
 </string>
           </argument>
         </arguments>
@@ -73,7 +75,7 @@ flameActive = true;
           <argument>
             <kind>1</kind>
             <string>if (alarm[0] = -1) alarm[0] = 60
-if (flameActive and distance_to_object(ObjTankBody) &lt; 12){
+if (flameActive and distance_to_object(ObjTankBody) &lt; 15){
     if (ObjTankBody.tankHealth &gt; 1) {ObjTankBody.tankHealth -= 1} 
     else {ObjTankBody.tankHealth = 0}
     var damageInstance = instance_create(ObjTankBody.x+6, ObjTankBody.y, hitLabel);
@@ -103,6 +105,7 @@ if (flameActive and distance_to_object(ObjTankBody) &lt; 12){
             <kind>1</kind>
             <string>image_speed = 0;
 flameActive = false;
+audio_stop_sound(flame)
 </string>
           </argument>
         </arguments>

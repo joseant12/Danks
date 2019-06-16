@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.bulletDamage = 10;
+            <string>instance_create(0,0,ObjCursor)
+global.bulletDamage = 10;
 global.buckets = 0;
 //Create grid
 var cell_width = 32;

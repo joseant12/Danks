@@ -7,6 +7,8 @@
   <sounds name="sound">
     <sound>sound\balloon</sound>
     <sound>sound\bubbling</sound>
+    <sound>sound\flame</sound>
+    <sound>sound\cannonSound</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\TankBody</sprite>
@@ -44,6 +46,7 @@
       <sprite>sprites\atacar</sprite>
       <sprite>sprites\objetivos</sprite>
     </sprites>
+    <sprite>sprites\cursor</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -78,10 +81,15 @@
       <object>objects\ObjInstObjetivos</object>
       <object>objects\ObjObjetivos</object>
     </objects>
+    <object>objects\ObjCursor</object>
+    <object>objects\ObjFinal</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room0</room>
     <room>rooms\room1</room>
+    <room>rooms\room0</room>
+    <room>rooms\room3</room>
+    <room>rooms\room2</room>
+    <room>rooms\room4</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
